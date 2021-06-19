@@ -5,3 +5,12 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+3.times do
+    d = Department.create(name: Faker::Commerce.department)
+    3.times do |i|
+        d.items.create(name: Faker::Commerce.product_name)
+    end
+end
+
+puts "seeded"
